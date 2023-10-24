@@ -3,7 +3,7 @@ package com.qa;
 import java.util.Arrays;
 import java.util.List;
 
-public class Establishment {
+public abstract class Establishment {
     public Establishment() {
         this("Manchester", 900, 2330, 4.50);
     }
@@ -61,4 +61,5 @@ public class Establishment {
         this.location = location;
     }
 
+    public abstract String statement();
 }
