@@ -19,8 +19,6 @@ public class Pub extends Establishment {
     private ArrayList<String> drinkList = new ArrayList<>();
 //    private String[] drinks = {"carling", "madri", "guinness", "g&t", "asahi", "1664", "carlsberg"};
 
-
-
     public void addDrink(String drink) {
         drink = drink.toLowerCase();
         if (!this.drinkList.contains(drink)) {
