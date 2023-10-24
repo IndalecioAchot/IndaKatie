@@ -14,14 +14,28 @@ public class App
 //        Animal ant = new Animal();
 //        ant.setAge(1);
 //        System.out.println(ant);
-        Pub pub1 = new Pub("Manchester");
-        pub1.setCloseTime(2260);
-        System.out.println(pub1.getCloseTime());
+//        Pub pub1 = new Pub("Manchester");
+//        pub1.setCloseTime(2260);
+//        System.out.println(pub1.getCloseTime());
+//
+//        pub1.addDrink("vodka");
+//        System.out.println(pub1.getDrinkList());
+//        pub1.removeDrink("madri");
+//        System.out.println(pub1.getDrinkList());
+//        System.out.println(pub1);
+        arrayExercise();
 
-        pub1.addDrink("vodka");
-        System.out.println(pub1.getDrinkList());
-        pub1.removeDrink("madri");
-        System.out.println(pub1.getDrinkList());
-        System.out.println(pub1);
+    }
+    public static void arrayExercise()
+    {
+        Pub[] pubs = {new Pub("Brighton"), new Pub("Plymouth", 1800, 200, 4.95), new Pub("London", 1100, 2300, 2.49)};
+
+        for (Pub item: pubs)
+        {
+            System.out.println(item);
+            item.addDrink("Estrella Galicia");
+            System.out.println(item.getDrinkList());
+        }
+
     }
 }
