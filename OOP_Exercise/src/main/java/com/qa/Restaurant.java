@@ -32,4 +32,8 @@ public class Restaurant extends Establishment {
                 this.getLocation(), this.getOpenTime(), this.getCloseTime(), this.getRating());
     }
 
+    @Override
+    public String statement() {
+        return null;
+    }
 }
