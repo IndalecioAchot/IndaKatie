@@ -70,12 +70,19 @@ public abstract class Establishment {
     }
 
     public static void changeName(Establishment establishment, String name)throws InvalidNameException {
+        boolean error = false;
+
         try {
             establishment.setName(name);
         }
 
         catch(InvalidNameException exception) {
             System.out.println("There has been an exception. " + exception);
+            error = true;
+        }
+
+        finally {
+            System.out.println(error ? "Name not changed due to an error" : "Name has been successfully changed");
         }
     }
 
