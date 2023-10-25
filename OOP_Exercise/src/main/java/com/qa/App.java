@@ -29,9 +29,9 @@ public class App
     }
     public static void arrayExercise()
     {
-        Pub[] pubs = {new Pub("Brighton"),
-                new Pub("Plymouth", 1800, 200, 4.95),
-                new Pub("London", 1100, 2300, 2.49)};
+        Pub[] pubs = {new Pub("Kings Head","Brighton"),
+                new Pub("David's","Plymouth", 1800, 200, 4.95),
+                new Pub("Indas","London", 1100, 2300, 2.49)};
 
         for (Pub item: pubs)
         {
@@ -40,14 +40,24 @@ public class App
             System.out.println(item.getDrinkList());
         }
 
-        ArrayList<Pub> pubFlexible = new ArrayList<>();
-        pubFlexible.add(new Pub("Edinburgh"));
-        pubFlexible.add(new Pub("Glasgow", 700, 1700, 0.35));
-        for (Pub item: pubFlexible)
+        ArrayList<Establishment> establishmentFlexible = new ArrayList<>();
+        establishmentFlexible.add(new Pub("Wetherspoons","Edinburgh"));
+        establishmentFlexible.add(new Pub("Wetherspoons","Glasgow", 700, 1700, 0.35));
+        establishmentFlexible.add(new Restaurant(new ArrayList<String>()));
+
+        for (Establishment item: establishmentFlexible)
         {
             item.setOpenTime(1300);
             System.out.println(item);
-            System.out.println(item.getDrinkList());
+            System.out.println(item.statement());;
+
         }
+
+//        Pub pub1 = new Pub("The Bull ","Birmingham" );
+//        Pub pub1 = new Pub("The Bull ","Birmingham" );
+
+
+
+
     }
 }

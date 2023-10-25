@@ -5,19 +5,30 @@ import java.util.List;
 
 public abstract class Establishment {
     public Establishment() {
-        this("Manchester", 900, 2330, 4.50);
+        this("Whetherspoons","Manchester", 900, 2330, 4.50);
     }
-    public Establishment(String location, int openTime, int closeTime, double rating) {
+    public Establishment(String name, String location, int openTime, int closeTime, double rating) {
         this.location = location;
         this.openTime = openTime;
         this.closeTime = closeTime;
         this.rating = rating;
+        this.name = name;
     }
 
     private String location;
     private int openTime;
     private int closeTime;
     private double rating;
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public double getRating() {
         return rating;

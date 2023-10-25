@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Restaurant extends Establishment {
     public Restaurant(ArrayList<String> foodList) {
-        super("Manchester", 1100, 2200, 4.50);
+        super("George","Manchester", 1100, 2200, 4.50);
         this.foodList = foodList;
     }
 
@@ -30,6 +30,11 @@ public class Restaurant extends Establishment {
     public String toString() {
         return String.format("The %s restaurant opens at %04d and closes at %04d and has a rating of %.2f",
                 this.getLocation(), this.getOpenTime(), this.getCloseTime(), this.getRating());
+    }
+
+    @Override
+    public String statement() {
+        return "This is the " + this.getName()+ " restaurant located in " + this.getLocation();
     }
 
 }
