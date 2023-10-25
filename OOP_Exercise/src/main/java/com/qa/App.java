@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class App 
 {
-    public static void main( String[] args ) throws InvalidNameException {
+    public static void main( String[] args ) throws InvalidNameException, InvalidLocationException {
 //        Animal cat = new Animal(5, 0.5, "Cat");
 //        System.out.println(cat);
 //
@@ -27,7 +27,7 @@ public class App
         arrayExercise();
 
     }
-    public static void arrayExercise() throws InvalidNameException
+    public static void arrayExercise() throws InvalidNameException, InvalidLocationException
     {
         Pub[] pubs = {new Pub("Kings Head","Brighton"),
                 new Pub("David's","Plymouth", 1800, 200, 4.95),
@@ -72,10 +72,19 @@ public class App
         boolean tattoos = true;
 
 
-
         for (IHireable establishment : hireableEstablishments) {
             System.out.println(establishment.hire(tattoos));
         }
+
+        try{
+            restaurant1.setLocation("Malibu");
+            System.out.println(restaurant1);
+        }
+        catch(InvalidLocationException e){
+            System.out.println("This is not a valid location " + e);
+    }
+
+
 
     }
 

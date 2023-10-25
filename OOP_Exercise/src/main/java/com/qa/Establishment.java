@@ -43,6 +43,7 @@ public abstract class Establishment {
         if (rating >= 0 && rating <= 5) {
             this.rating = rating;
         }
+
     }
 
     public int getCloseTime() {
@@ -69,7 +70,7 @@ public abstract class Establishment {
         }
     }
 
-    public static void changeName(Establishment establishment, String name)throws InvalidNameException {
+    public static void changeName(Establishment establishment, String name) throws InvalidNameException {
         boolean error = false;
 
         try {
@@ -90,7 +91,14 @@ public abstract class Establishment {
         return this.location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation (String location) throws InvalidLocationException {
+
+        for(int i = 0; i < location.length(); i++){
+            char currentCharacter = location.charAt(i);
+            if (Character.isDigit(currentCharacter)){
+                throw new InvalidLocationException();
+            }
+        }
         this.location = location;
     }
 
