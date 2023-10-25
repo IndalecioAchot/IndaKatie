@@ -1,6 +1,6 @@
 package com.qa;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle implements IHireable{
     //    CONSTRUCTOR - parameterless constructor by default
     public Car() {
         this("Ford", "Focus", COLOUR.Black);
@@ -66,5 +66,10 @@ public class Car extends Vehicle{
     @Override
     public String abstractMethod(String thing) {
         return "I am a car and this is an abstract method that I have overridden: " + thing;
+    }
+
+    @Override
+    public String hire(boolean tattoos) {
+        return "You can hire this car!";
     }
 }

@@ -3,7 +3,7 @@ package com.qa;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Restaurant extends Establishment {
+public class Restaurant extends Establishment implements IHireable {
     public Restaurant(ArrayList<String> foodList) {
         super("George","Manchester", 1100, 2200, 4.50);
         this.foodList = foodList;
@@ -34,12 +34,16 @@ public class Restaurant extends Establishment {
 
     @Override
     public String statement() {
-<<<<<<< HEAD
+
         return "This is the " + this.getName()+ " restaurant located in " + this.getLocation();
     }
 
-=======
-        return null;
+    @Override
+    public String hire(boolean tattoos) {
+        if (!tattoos) return this.getName() + "has been hired";
+        else return "You cannot hire " + this.getName();
     }
->>>>>>> ef8ae2ed303be7165133697ef9e87ca73c45e4b7
-}
+
+    }
+
+

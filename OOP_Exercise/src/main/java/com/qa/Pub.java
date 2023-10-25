@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Pub extends Establishment {
+public class Pub extends Establishment implements IHireable {
 
     public Pub(String name, String location) {
         this(name,location, 900, 2330, 4.50);
@@ -14,11 +14,6 @@ public class Pub extends Establishment {
         super(name, location, openTime, closeTime, rating);
         List<String> tempList = Arrays.asList("carling", "madri", "guinness", "g&t", "asahi", "1664", "carlsberg");
         this.drinkList.addAll(tempList);
-    }
-
-    @Override
-    public String statement() {
-        return null;
     }
 
     private ArrayList<String> drinkList = new ArrayList<>();
@@ -50,5 +45,11 @@ public class Pub extends Establishment {
     @Override
     public String statement() {
         return "This is the " + this.getName()+ " pub located in " + this.getLocation();
+    }
+
+    @Override
+    public String hire(boolean tattoos) {
+        if (!tattoos) return this.getName() + "has been hired";
+        else return "You cannot hire " + this.getName();
     }
 }

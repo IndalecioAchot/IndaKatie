@@ -1,5 +1,6 @@
 package com.qa;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Hello world!
@@ -53,8 +54,20 @@ public class App
 
         }
 
-//        Pub pub1 = new Pub("The Bull ","Birmingham" );
-//        Pub pub1 = new Pub("The Bull ","Birmingham" );
+        Car ford = new Car();
+        Pub pub1 = new Pub("The Bull", "Birmingham");
+        Restaurant restaurant1 = new Restaurant(new ArrayList<String>());
+        List<IHireable> hireableEstablishments = new ArrayList<>() {
+            {add(ford); add(pub1); add(restaurant1);}
+        };
+
+        boolean tattoos = true;
+
+        for (IHireable establishment : hireableEstablishments) {
+            System.out.println(establishment.hire(tattoos));
+        }
+
+
 
 
 
