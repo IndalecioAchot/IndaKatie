@@ -16,6 +16,11 @@ public class Pub extends Establishment {
         this.drinkList.addAll(tempList);
     }
 
+    @Override
+    public String statement() {
+        return null;
+    }
+
     private ArrayList<String> drinkList = new ArrayList<>();
 //    private String[] drinks = {"carling", "madri", "guinness", "g&t", "asahi", "1664", "carlsberg"};
 

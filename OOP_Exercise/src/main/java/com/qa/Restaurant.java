@@ -34,7 +34,12 @@ public class Restaurant extends Establishment {
 
     @Override
     public String statement() {
+<<<<<<< HEAD
         return "This is the " + this.getName()+ " restaurant located in " + this.getLocation();
     }
 
+=======
+        return null;
+    }
+>>>>>>> ef8ae2ed303be7165133697ef9e87ca73c45e4b7
 }
