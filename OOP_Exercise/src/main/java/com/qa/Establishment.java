@@ -26,7 +26,12 @@ public abstract class Establishment {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws InvalidNameException {
+        char startingLetter = name.charAt(0);
+        if (!Character.isUpperCase(startingLetter)) {
+            throw new InvalidNameException();
+        }
+
         this.name = name;
     }
 
@@ -61,6 +66,16 @@ public abstract class Establishment {
         int openMinute = openTime % 100;
         if (openHour <= 24 && openMinute < 60 && openHour >= 0 && openMinute >= 0) {
             this.openTime = openTime;
+        }
+    }
+
+    public static void changeName(Establishment establishment, String name)throws InvalidNameException {
+        try {
+            establishment.setName(name);
+        }
+
+        catch(InvalidNameException exception) {
+            System.out.println("There has been an exception. " + exception);
         }
     }
 

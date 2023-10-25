@@ -8,8 +8,7 @@ import java.util.List;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws InvalidNameException {
 //        Animal cat = new Animal(5, 0.5, "Cat");
 //        System.out.println(cat);
 //
@@ -28,7 +27,7 @@ public class App
         arrayExercise();
 
     }
-    public static void arrayExercise()
+    public static void arrayExercise() throws InvalidNameException
     {
         Pub[] pubs = {new Pub("Kings Head","Brighton"),
                 new Pub("David's","Plymouth", 1800, 200, 4.95),
@@ -56,6 +55,15 @@ public class App
 
         Car ford = new Car();
         Pub pub1 = new Pub("The Bull", "Birmingham");
+        System.out.println("The name of this pub is: " + pub1.getName());
+        Establishment.changeName(pub1, "Inda's Pub");
+        System.out.println("The changed name of this pub is " + pub1.getName());
+
+        Establishment.changeName(pub1, "inda's pub");
+        System.out.println("The changed name of this pub is " + pub1.getName());
+
+
+
         Restaurant restaurant1 = new Restaurant(new ArrayList<String>());
         List<IHireable> hireableEstablishments = new ArrayList<>() {
             {add(ford); add(pub1); add(restaurant1);}
@@ -63,14 +71,13 @@ public class App
 
         boolean tattoos = true;
 
+
+
         for (IHireable establishment : hireableEstablishments) {
             System.out.println(establishment.hire(tattoos));
         }
 
-
-
-
-
-
     }
+
+
 }
